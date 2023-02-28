@@ -15,9 +15,9 @@ pipeline {
  stage('deploy') {
             steps {
                 sshagent(['tomcat-new']) {
-    sh "scp -o StrictHostKeyChecking=no webapp/Target/webapp.war ec2-user@43.205.94.198:/opt/tomcat/webapps"
+                     sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/devpipeline/target/helloworld-1.1.jar ec2-user@43.205.124.178:/opt/tomcat/webapps"
+                }
+  }
 }
-                
-}
-}}}
+    }}
 
